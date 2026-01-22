@@ -1,0 +1,26 @@
+/* App-specific styles */
+
+.app {
+    min-height: 100vh;
+}
+
+/* Section Styling */
+.section {
+    padding: var(--spacing-20) 0;
+}
+
+.section-header {
+    margin-bottom: var(--spacing-16);
+}
+
+.section-title {
+    font-size: var(--font-size-h2);
+    margin-top: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+}
+
+.section-description {
+    font-size: 1.125rem;
+    max-width: 700px;
+    margin: 0 auto;
+}

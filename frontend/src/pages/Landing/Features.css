@@ -1,0 +1,128 @@
+/* Features Section */
+.features-section {
+    background: white;
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 24px 24px;
+    /* Subtle dot pattern */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(280px, auto);
+    /* Slightly taller rows */
+    gap: var(--spacing-6);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Bento Grid Spans */
+.span-2 {
+    grid-column: span 2;
+}
+
+.span-row-2 {
+    grid-row: span 2;
+}
+
+/* Card Styling Enhancements for Bento */
+.feature-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-100);
+}
+
+/* Dark Theme Card (for AI) */
+.feature-card-dark {
+    background: #1e1b4b;
+    /* Indigo 950 */
+    color: white;
+    border: 1px solid #312e81;
+}
+
+.feature-card-dark .feature-title,
+.feature-card-dark .feature-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-card-dark .feature-icon {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Primary Theme Card (for Orders) */
+.feature-card-primary {
+    background: linear-gradient(135deg, white 0%, #eef2ff 100%);
+    border-color: #c7d2fe;
+}
+
+/* Hover Effects */
+.feature-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card {
+    overflow: hidden;
+    /* for creative background shapes */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Creative Background Glow on Hover */
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--color-primary-light) 0%, transparent 70%);
+    opacity: 0;
+    transform: translate(30%, -30%);
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.feature-card:hover::after {
+    opacity: 0.1;
+}
+
+
+/* Large card specific */
+.feature-card.span-2 .feature-title {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Reset spans for tablet if needed, or keep 2-col */
+    .span-2 {
+        grid-column: span 2;
+    }
+
+    .span-row-2 {
+        grid-row: span 1;
+        /* Reset row spans to avoid gaps */
+    }
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .span-2,
+    .span-row-2 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}

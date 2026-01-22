@@ -1,0 +1,194 @@
+/* How It Works Section */
+.how-it-works-section {
+    background: linear-gradient(135deg, var(--color-neutral-50) 0%, white 100%);
+}
+
+/* Process Steps */
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+    margin-top: var(--spacing-8);
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-16);
+    padding: var(--spacing-8);
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.process-step--reverse {
+    flex-direction: row-reverse;
+}
+
+.process-content {
+    flex: 1;
+}
+
+.process-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.process-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.05));
+    transition: transform var(--transition-base);
+}
+
+.process-step:hover .process-image {
+    transform: scale(1.02);
+}
+
+.step-number {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, white 100%);
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-4);
+    border: 1px solid var(--color-primary-light);
+}
+
+.step-title {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-4);
+    color: var(--color-neutral-dark);
+}
+
+.step-description {
+    color: var(--color-neutral-600);
+    line-height: var(--line-height-relaxed);
+    font-size: 1.125rem;
+}
+
+/* Responsive Process Steps */
+@media (max-width: 768px) {
+
+    .process-step,
+    .process-step--reverse {
+        flex-direction: column;
+        gap: var(--spacing-8);
+        text-align: center;
+    }
+
+    .process-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Multi-Tenant Section */
+.multi-tenant-section {
+    background: white;
+}
+
+.multi-tenant-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-16);
+    align-items: center;
+}
+
+.multi-tenant-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    margin: var(--spacing-6) 0;
+}
+
+.feature-list-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    font-size: 1.125rem;
+    color: var(--color-neutral-700);
+}
+
+.feature-check {
+    width: 24px;
+    height: 24px;
+    background: var(--color-success);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.multi-tenant-visual {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.tenant-card {
+    background: white;
+    padding: var(--spacing-6);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    transition: transform var(--transition-base);
+    animation: slideInRight var(--transition-slow) ease-out;
+}
+
+.tenant-card:hover {
+    transform: translateX(8px);
+}
+
+.tenant-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--color-primary-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.tenant-name {
+    flex: 1;
+    font-weight: var(--font-weight-semibold);
+    font-size: 1.125rem;
+    color: var(--color-neutral-dark);
+}
+
+.tenant-stats {
+    font-size: var(--font-size-caption);
+    color: var(--color-neutral-500);
+}
+
+@media (max-width: 1024px) {
+    .multi-tenant-content {
+        grid-template-columns: 1fr;
+    }
+}
